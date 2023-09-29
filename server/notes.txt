@@ -1,0 +1,43 @@
+https://www.apollographql.com/docs/apollo-server/integrations/mern/#complete-example
+
+npm init -y
+
+npm install graphql graphql-tag @apollo/subgraph @apollo/server
+
+
+- graphql is the JavaScript reference implementation for GraphQL
+- graphql-tag is a utility package to parse a GraphQL string into the standard GraphQL abstract syntax tree (AST)
+- @apollo/subgraph is a utility package for creating GraphQL microservices
+- @apollo/server is a spec-compliant GraphQL server that exposes a /graphql endpoint
+
+
+- in src/schema.graphql
+
+type Query {
+  record(id:ID!): Record
+  records: [Record]
+}
+
+type Mutation {
+  createRecord(name: String!, position: String, level: String): Record
+  deleteRecord(id: ID!): Boolean
+  updateRecord(id: ID! name: String, position: String, level: String): Record
+}
+
+type Record {
+  id: ID
+  name: String
+  position: String
+  level: String
+}
+
+
+
+- src/resolvers.ts 
+
+
+
+
+
+
+http://localhost:5050/graphql
