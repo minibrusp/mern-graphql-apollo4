@@ -38,5 +38,9 @@ app.use("/graphql", cors(), json(), expressMiddleware(server));
 
 // start the Express server
 app.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`);
+  if(process.env.PORT) return console.log(`Server is running on port: ${PORT}`);
+  if(!process.env.PORT) {
+    console.log(`Server is running on http://localhost:${PORT}`)
+    console.log(`Apollo Sandbox running on http://localhost:${PORT}/graphql`)
+  }
 });

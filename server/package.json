@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "npm run compile",
     "compile": "tsc",
-    "start": "npm run compile && node ./dist/server.js"
+    "start": "npm run compile && nodemon ./dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,8 @@
     "express": "^4.18.2",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
-    "mongodb": "^6.1.0"
+    "mongodb": "^6.1.0",
+    "nodemon": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.7.2",
